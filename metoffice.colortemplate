@@ -1,0 +1,173 @@
+; vim: ft=colortemplate fdm=marker cc=22,40,58 et ts=2 sw=2
+
+; Information {{{
+; Mandatory
+Full name:     Met Office
+Short name:    metoffice
+Author:        Violet Sherratt <violet.sherratt@metoffice.gov.uk>
+; Optional
+Description:   Met Office branded colour scheme
+License:       Public domain
+Colortemplate Options: timestamp=0
+; }}}
+
+; Common linked groups {{{
+CursorColumn      -> CursorLine
+ColorColumn       -> CursorLine
+CurSearch         -> IncSearch
+PopupSelected     -> PmenuSel
+QuickFixLine      -> Search
+StatusLineTerm    -> StatusLine
+StatusLineTermNC  -> StatusLineNC
+Boolean           -> Constant
+Character         -> String
+Conditional       -> Statement
+Debug             -> Special
+Define            -> PreProc
+Delimiter         -> Special
+Exception         -> Statement
+Float             -> Constant
+Function          -> Identifier
+Include           -> PreProc
+Keyword           -> Statement
+Label             -> Statement
+Macro             -> PreProc
+Number            -> Constant
+Operator          -> Statement
+PreCondit         -> PreProc
+Repeat            -> Statement
+SpecialChar       -> Special
+SpecialComment    -> Special
+StorageClass      -> Type
+String            -> Constant
+Structure         -> Type
+Tag               -> Special
+Typedef           -> Type
+; See `:help lCursor`
+lCursor           -> Cursor
+; }}}
+
+Background: dark
+
+; Color palette for dark theme {{{
+; Color name       GUI       Base256   Base16 (optional)
+Color: black       #1d1d1d   232       Black
+Color: dgrey       #2a2a2a   236       DarkGrey
+Color: lgrey       #bbbdbf   250       LightGrey
+Color: white       #ffffff   255       White
+Color: red         #ff0000   196       LightRed
+Color: rwarn       #ca0a37   161       DarkRed
+Color: awarn       #ff9900   208       DarkYellow
+Color: ywarn       #ffe923   220       LightYellow
+; Color: lspring     #55c6b4             LightGreen
+Color: lspring     #77d1c3   116       LightGreen
+; Color: spring      #288172             DarkGreen
+Color: spring      #539a8e   72        DarkGreen
+; Color: lsummer     #359bc0             LightCyan
+Color: lsummer     #5dafcd   74        LightCyan
+; Color: summer      #0f79be             DarkCyan
+Color: summer      #3f94cb   39        DarkCyan
+Color: core        #c4e90c   148       LightBlue
+; Color: winter      #777584             DarkBlue
+Color: winter      #92919d   246       DarkBlue
+; Color: autumn      #cf4922             DarkMagenta
+Color: autumn      #d96d4e   167       DarkMagenta
+; Color: lautumn     #e47452             LightMagenta
+Color: lautumn     #e99075   216       LightMagenta
+; }}}
+
+; Terminal colors for dark theme {{{
+Term colors: black rwarn spring awarn
+Term colors: winter autumn summer lgrey
+Term colors: dgrey red lspring ywarn
+Term colors: core lautumn lsummer white
+; }}}
+
+; Default highlight groups {{{
+Variant: gui
+#if get(g:, '@optionprefix_transp_bg', 0) && !has('gui_running')
+Variant: 256 8
+#if get(g:, '@optionprefix_transp_bg', 0)
+Variant: gui 256 8
+    Normal           white       none
+    Terminal         white       none
+#else
+    Normal           white       black
+    Terminal         white       black
+#endif
+
+; Group              Foreground  Background  Attributes
+; UI
+Conceal              lgrey       none 
+Cursor               white       black       reverse
+CursorLine           none        dgrey
+DiffAdd              spring      black       reverse
+DiffChange           ywarn       black       reverse
+DiffDelete           red         black       reverse
+DiffText             awarn       black       bold,reverse
+EndOfBuffer          lautumn     black
+ErrorMsg             white       black       reverse
+Folded               lgrey       none        italic
+FoldColumn           lgrey       black
+SignColumn           white       black
+LineNr               summer      dgrey
+CursorLineNr         core        dgrey       bold
+MatchParen           ywarn       none        bold,reverse
+ModeMsg              core        black       bold
+MoreMsg              spring      black
+Question             lsummer     black
+Title                summer      black       bold
+Directory            awarn       black
+NonText              lautumn     black
+SpecialKey           lgrey       black
+Pmenu                white       dgrey
+PmenuSbar            none        lgrey
+PmenuSel             summer      dgrey       bold
+PmenuThumb           none        lgrey
+Search               ywarn       none
+IncSearch            ywarn       none        bold
+SpellBad             none        none        s=red undercurl
+SpellCap             none        none        s=ywarn undercurl
+SpellLocal           none        none        s=lautumn undercurl
+SpellRare            none        none        s=lsummer undercurl
+StatusLine           white       black
+StatusLineNC         lgrey       black
+TabLine              white       black
+TabLineFill          white       black
+TabLineSel           white       black
+VertSplit            white       dgrey
+Visual               ywarn       dgrey
+VisualNOS            ywarn       dgrey       italic
+WarningMsg           rwarn       black
+WildMenu             summer      black       bold
+
+; Syntax groups (see `:help group-name`)
+Error                rwarn       none        reverse
+Comment              lgrey       none        italic
+Todo                 lgrey       none        bold
+Constant             awarn       none
+String               lsummer     none
+Number               lspring     none
+Identifier           summer      none        italic
+Function             summer      none
+Statement            core        none        bold
+Operator             ywarn       none
+PreProc              winter      none
+Include              lautumn     none        bold
+Macro                winter      none        italic
+Type                 spring      none        italic
+Special              autumn      none
+Underlined           fg          none        underline
+Ignore               black       none
+Noise                lgrey       none
+
+; See `:help CursorIM`
+CursorIM             none        fg
+; See `:help window-toolbar`
+ToolbarLine          none        black
+ToolbarButton        white       black       bold
+; }}}
+
+; Additional highlight groups {{{
+; Add additional highlight groups here if you want
+; }}}
